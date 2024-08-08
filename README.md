@@ -4,7 +4,7 @@
 
 The Library Management System provides functionalities for users to interact with the library's collection, including browsing, borrowing, and purchasing books and journals. It supports both guest and registered user access with a variety of features for managing items and user accounts.
 
-The project was completed on 15th April, 2024.
+The project was completed on April, 2024.
 
 ## Features
 
