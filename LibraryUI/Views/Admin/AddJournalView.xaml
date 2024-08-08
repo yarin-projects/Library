@@ -1,0 +1,90 @@
+﻿<Window x:Class="LibraryUI.Views.Admin.AddJournalView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryUI.Views.Admin"
+        mc:Ignorable="d"
+            Title="Add Journal" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="Height" Height="auto" Width="830">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2">
+            <TextBlock Text="Discount: 10% "/>
+            <CheckBox x:Name="chkBoxDiscountActive" Content="Activate"/>
+        </StackPanel>
+        <TextBlock x:Name="txtMonthError" Grid.Row="6" Grid.Column="1" Style="{StaticResource txtError}"/>
+        <Grid Grid.Row="8" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAdd" Content="Add Journal" Cursor="Hand" Grid.Column="1"   Click="AddJournalClick"/>
+            <Button  x:Name="btnClose" Content="Close" Grid.Column="0" Cursor="Hand" Click="CloseWindowClick" />
+        </Grid>
+        <TextBlock x:Name="txtSuccess" Style="{StaticResource txtSuccess}" Grid.Row="9" Grid.ColumnSpan="2"/>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Title:" Grid.Column="0"/>
+            <TextBox x:Name="txtTitle" Margin="0 0 15 0" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock x:Name="txtTitleError" Grid.Row="1" Grid.Column="1" Style="{StaticResource txtError}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Price:" Grid.Row="0" Grid.Column="0"/>
+            <TextBox x:Name="txtPrice" Margin="0 0 15 0" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock x:Name="txtPriceError" Grid.Row="1" Grid.Column="1" Style="{StaticResource txtError}"/>
+        </Grid>
+        <DatePicker x:Name="datePickerInput" Margin="5 0 15 0"  Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Copies:" Grid.Row="0" Grid.Column="0"/>
+            <TextBox x:Name="txtCopyNum" Margin="0 0 15 0"  Grid.Row="0" Grid.Column="1"/>
+            <TextBlock x:Name="txtCopyNumError" Grid.Row="1" Grid.Column="1" Style="{StaticResource txtError}"/>
+        </Grid>
+        <ComboBox x:Name="cmbBoxCategory" Margin="5 0 15 0" Grid.Row="4" Grid.ColumnSpan="2" SelectedIndex="0"/>
+        <StackPanel Grid.Row="5" Grid.Column="1" Margin="0 0 15 0">
+            <ComboBox x:Name="cmbBoxMonths" SelectedIndex="0"/>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button x:Name="btnAddMonth" Content="Add Month" Cursor="Hand" Width="174" Click="AddMonthClick"/>
+                <Button x:Name="btnRemoveMonth" Content="Remove Month" Cursor="Hand" Width="226" Click="RemoveMonthClick"/>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="txtMonths" Margin="5 0 0 0" Grid.Row="5" Grid.Column="0" Style="{StaticResource monthTxt}"/>
+    </Grid>
+</Window>
